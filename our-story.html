@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+  >
+  <title>Our Story | Emily & Sven</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="password-screen" class="password-screen">
+    <div class="password-card">
+      <p class="eyebrow">YOU'RE INVITED</p>
+      <h1>Emily <span>&</span> Sven</h1>
+      <p class="password-intro">Enter the password from your invitation.</p>
+      <form id="password-form">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" placeholder="Password" autocomplete="off" required>
+        <button type="submit" class="button">Enter</button>
+        <p id="password-error" class="password-error">That's not quite right — try again.</p>
+      </form>
+    </div>
+  </div>
+
+  <div id="site-content" class="site-hidden">
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="nav-logo">E <span>&</span> S</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="details.html">Details</a>
+          <a href="faq.html">FAQ</a>
+          <a href="our-story.html" class="active">Our Story</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <p class="eyebrow">ABOUT US</p>
+        <h1>Our Story</h1>
+        <p class="body-large">We first met online after Emily moved to Denver in early 2021. Our first date was at a local coffee shop and went so well that we didn't realize the coffee shop was closing until the barista needed to lock up 45 minutes after the normal closing time! The rest is history.</p>
+        <p class="body-large"></p>
+      </section>
+
+        <div class="hero-divider"></div>
+        <br>
+        <br>
+        <br>
+        <div class="section-narrow">
+          <div>
+            <p class="eyebrow">A FEW MEMORIES</p>
+            <h2 style="text-align: center;">Photo Gallery</h2>
+          </div>
+        </div>
+        <section class="gallery">
+            <img src="images/glenwood-springs.jpg">
+            <img src="images/julia_wedding.jpeg">
+            <img src="images/ring.jpeg">
+            <img src="images/mountain.JPG">
+            <img src="images/standing.jpeg">
+            <img src="images/gaze.jpeg">
+            <img src="images/kiss.jpeg">
+            <img src="images/proposal.JPG">
+            <img src="images/durango.JPG">
+            <img src="images/dino.JPG">
+            <img src="images/disc-golf.JPG">
+            
+            
+        </section>
+           
+    </main>
+
+    <footer class="site-footer">
+      <p>Emily & Sven · September 2027</p>
+    </footer>
+  </div>
+
+  <script>
+    const SITE_PASSWORD = "cheers";
+    const passwordScreen = document.getElementById("password-screen");
+    const siteContent = document.getElementById("site-content");
+    const passwordForm = document.getElementById("password-form");
+    const passwordInput = document.getElementById("password");
+    const passwordError = document.getElementById("password-error");
+
+    if (sessionStorage.getItem("weddingUnlocked") === "true") {
+      unlockSite();
+    }
+
+    passwordForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (passwordInput.value === SITE_PASSWORD) {
+        sessionStorage.setItem("weddingUnlocked", "true");
+        unlockSite();
+      } else {
+        passwordError.classList.add("visible");
+        passwordInput.classList.add("input-error");
+        passwordInput.value = "";
+      }
+    });
+
+    function unlockSite() {
+      passwordScreen.classList.add("hidden");
+      siteContent.classList.remove("site-hidden");
+    }
+  </script>
+</body>
+</html>
