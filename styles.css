@@ -5,7 +5,7 @@
 
 :root {
   --cream: #fff5e9;
-  --cream-light: #fff5e9;
+  --cream-light: #fff8ee;
   --paper: #fff5e9;
   --ink: #292823;
   --ink-light: #57554d;
@@ -114,10 +114,22 @@ color: var(--oxblood);
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  /*background:
+    radial-gradient(circle at 20% 15%, rgba(250, 233, 217, 0.114), transparent 30%),
+    radial-gradient(circle at 50% 50%, rgba(117, 28, 28, 0.27), transparent 40%),
+    var(--terracotta);*/
   background:
-    radial-gradient(circle at 20% 20%, rgba(184,111,85,.14), transparent 30%),
-    radial-gradient(circle at 80% 80%, rgba(94,100,75,.16), transparent 30%),
-    var(--cream);
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.10), transparent 25%),
+    radial-gradient(circle at 85% 75%, rgba(117,28,28,.12), transparent 25%),
+    radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px),
+    var(--terracotta);
+
+  background-size:
+    auto,
+    auto,
+    18px 18px,
+    auto;
+
   transition: opacity .5s ease, visibility .5s ease;
 }
 
@@ -129,44 +141,49 @@ color: var(--oxblood);
 
 .password-card {
   width: 100%;
-  max-width: 480px;
+  max-width: 600px;
   padding: 4rem 3rem;
   text-align: center;
   background: var(--paper);
-  border: 1px solid var(--line);
+  border: 1px solid var(--terracotta);
+  border-radius: 4px;
   box-shadow: 0 20px 70px rgba(41,40,35,.08);
 }
 
-.password-card h1 {
-  margin-bottom: 1.5rem;
-  font-size: clamp(3rem, 10vw, 5rem);
+.password-card h2 {
+  /*margin-bottom: 1.5rem;*/
+  font-size: 3rem;
 }
 
 .password-card h1 span {
   color: var(--terracotta);
-  font-style: italic;
 }
 
 .password-intro {
   margin-bottom: 2rem;
-  color: var(--ink-light);
+  color: var(--oxblood);
 }
 
 .password-card input {
-  width: 100%;
+  width: 40%;
   padding: 1rem 1.2rem;
   margin-bottom: .8rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--cream-light);
-  color: var(--ink);
-  font-family: var(--sans);
+  border: 1px solid var(--terracotta);
+  border-radius: 2px;
+  background: #48040411;
+  color: var(--oxblood);
   font-size: 1rem;
   text-align: center;
   outline: none;
 }
 
-.password-card input:focus { border-color: var(--olive); }
+.password-card input::placeholder {
+  color:#4804048e;
+  font-family: serif;
+  opacity: 1;
+}
+
+.password-card input:focus { border-color: var(--terracotta); }
 .password-card input.input-error { border-color: var(--oxblood); }
 
 .password-error {
@@ -299,8 +316,8 @@ color: var(--oxblood);
   display: inline-block;
   padding: .9rem 1.7rem;
   border: 1px solid var(--oxblood);
-  background: var(--terracotta);
-  color: white;
+  background: var(--oxblood);
+  color: var(--cream);
   font-family: var(--sans);
   font-size: .72rem;
   font-weight: 700;
@@ -501,7 +518,7 @@ color: var(--oxblood);
 }
 
 .info-card h3 { margin-bottom: .8rem; }
-.info-card p { margin-bottom: 0; color: var(--ink-light); }
+.info-card p { margin-bottom: 0; color: var(--oxblood); }
 
 .gallery {
   width: min(1200px, 90%);
