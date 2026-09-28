@@ -268,11 +268,11 @@ color: var(--oxblood);
   justify-content: center;
   padding: 3rem 2rem 5rem;
   text-align: center;
-  background:
-    /*radial-gradient(circle at 15% 75%, rgba(184,111,85,.18), transparent 25%),
+  /*background:
+    radial-gradient(circle at 15% 75%, rgba(184,111,85,.18), transparent 25%),
     radial-gradient(circle at 85% 25%, rgba(94,100,75,.17), transparent 30%),
     var(--cream);*/
-}
+  }
 
 .hero-content { max-width: 900px; }
 
