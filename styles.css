@@ -511,9 +511,9 @@ color: var(--oxblood);
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  gap: 8px;
+  /*background: var(--cream);
+  border: 1px solid var(--line);*/
 }
 
 .info-card {
